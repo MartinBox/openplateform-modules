@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache updateCheck="false" name="hibernate-cache">
+
+
+	<!-- DefaultCache setting. -->
+	  <defaultCache
+            maxElementsInMemory="10000"
+            eternal="false"
+            timeToIdleSeconds="120"
+            timeToLiveSeconds="120"
+            overflowToDisk="false"
+            diskPersistent="false"
+            diskExpiryThreadIntervalSeconds="120"
+            />
+
+	<!-- Special objects setting. -->
+	<!--
+	<cache name="com.yoochoice.account.entity.User" maxEntriesLocalHeap="1000" eternal="true"
+		overflowToDisk="true" maxEntriesLocalDisk="10000" />
+	<cache name="com.yoochoice.account.entity.User.roleList" maxEntriesLocalHeap="1000" eternal="true"
+		overflowToDisk="true" maxEntriesLocalDisk="10000" />
+	<cache name="com.yoochoice.account.entity.Team" maxEntriesLocalHeap="100" eternal="true"
+		overflowToDisk="true" maxEntriesLocalDisk="1000" />
+	<cache name="com.yoochoice.account.entity.Role" maxEntriesLocalHeap="100"
+		eternal="true" overflowToDisk="true" maxEntriesLocalDisk="1000" />
+	<cache name="com.yoochoice.account.entity.Tracking" maxEntriesLocalHeap="100"
+		eternal="true" overflowToDisk="true" maxEntriesLocalDisk="1000" />
+		-->
+</ehcache>

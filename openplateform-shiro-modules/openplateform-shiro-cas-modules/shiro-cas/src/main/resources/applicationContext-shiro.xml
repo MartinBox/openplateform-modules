@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd"
+	default-lazy-init="true">
+
+	<description>Shiro安全配置</description>
+
+	<!-- Shiro's main business-tier object for web-enabled applications -->
+	<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+		<constructor-arg ref="shiroDbRealm" name="singleRealm" />
+		<!-- <property name="realm" ref="shiroDbRealm" /> -->
+		<property name="cacheManager" ref="shiroEhcacheManager" />
+		<!-- <property name="sessionMode" value="native"/>just for test, remove 
+			it when deploy! -->
+		<!-- <property name="sessionManager" ref="sessionManager" /> -->
+		<property name="subjectFactory" ref="casSubjectFactory" />
+	</bean>
+
+	<!-- 項目自定义的Realm, 所有accountService依赖的dao都需要用depends-on声明 -->
+	<bean id="shiroDbRealm" class="com.open.cas.shiro.SimpleCasRealm">
+		<!-- 是CAS Server服务器端地址 -->
+		<!-- <property name="casServerUrlPrefix" value="http://localhost:8080/cas" 
+			/> -->
+		<property name="casServerUrlPrefix" value="http://localhost:8080/cas-server-webapp" />
+		<!-- 是当前应用CAS服务URL，即用于接收并处理登录成功后的Ticket的 -->
+		<property name="casService" value="http://127.0.0.1:8056/shiro-cas/cas" />
+	</bean>
+
+	<bean id="casFilter" class="org.apache.shiro.cas.CasFilter">
+		<property name="failureUrl" value="/casFailure.jsp" />
+		<!-- <property name="failureUrl" value="http://127.0.0.1:8080/cas-server-webapp/login?service=http://localhost:8054/shiro-cas/user/index.shtml" 
+			/> -->
+	</bean>
+	<bean id="logoutFilter" class="org.apache.shiro.web.filter.authc.LogoutFilter">
+		<property name="redirectUrl" value="/logout.jsp" />
+	</bean>
+	<!-- Shiro Filter -->
+	<bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+		<property name="securityManager" ref="securityManager" />
+		<property name="loginUrl"
+			value="http://localhost:8080/cas-server-webapp/login?service=http://127.0.0.1:8056/shiro-cas/cas" />
+		<property name="successUrl" value="/index.jsp" />
+		<property name="filters">
+			<util:map>
+				<entry key="cas" value-ref="casFilter" />
+				<entry key="logout" value-ref="logoutFilter" />
+			</util:map>
+		</property>
+
+		<property name="filterChainDefinitions">
+			<value>
+				/casFailure.jsp = anon
+				/user/logout = logout
+				/cas = cas
+				/** =  user
+
+			</value>
+		</property>
+	</bean>
+
+	<bean id="casSubjectFactory" class="org.apache.shiro.cas.CasSubjectFactory" />
+	<!-- 用户授权信息Cache, 采用EhCache -->
+	<bean id="shiroEhcacheManager" class="org.apache.shiro.cache.ehcache.EhCacheManager">
+		<property name="cacheManagerConfigFile" value="classpath:ehcache-shiro.xml" />
+	</bean>
+	<!-- <bean id="memoryCacheManager" class="org.apache.shiro.cache.MemoryConstrainedCacheManager" 
+		/> -->
+	<!-- 保证实现了Shiro内部lifecycle函数的bean执行 -->
+	<bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor" />
+
+
+	<bean id="sessionDAO" class="org.apache.shiro.session.mgt.eis.MemorySessionDAO" />
+
+	<bean id="simpleCookie" class="org.apache.shiro.web.servlet.SimpleCookie">
+		<property name="name" value="platform.session.id" />
+		<property name="maxAge" value="1800" /><!-- 设置会话的有效期，单位：秒 -->
+	</bean>
+
+
+
+	<!-- 会话Cookie模板 -->
+	<!-- <bean id="simpleCookie" class="org.apache.shiro.web.servlet.SimpleCookie"> 
+		SingleSignOutFilter发现是logoutRequest请求后，原来SingleSignOutHandler中创建的原生的session已经被销毁了，因为从a登出的，a的shiro 
+		session也会销毁， 但是b的shiro的session还没有被销毁，于是再访问b还是能访问，单点登出就有问题了 <constructor-arg 
+		value="JSESSIONID" /> <property name="httpOnly" value="true" /> <property 
+		name="maxAge" value="-1" /> </bean> -->
+
+	<!-- session 管理 -->
+	<bean id="sessionManager"
+		class="org.apache.shiro.web.session.mgt.DefaultWebSessionManager">
+		<property name="sessionDAO" ref="sessionDAO" />
+		<property name="sessionIdCookie" ref="simpleCookie" />
+		<property name="sessionIdCookieEnabled" value="true"></property>
+	</bean>
+
+</beans>
