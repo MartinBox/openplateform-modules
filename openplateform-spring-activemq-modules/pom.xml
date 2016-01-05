@@ -10,5 +10,6 @@
   <packaging>pom</packaging>
   <modules>
     <module>openplateform-spring-activemq-topic-producer</module>
+    <module>openplateform-spring-activemq</module>
   </modules>
 </project>
