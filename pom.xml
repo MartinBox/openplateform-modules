@@ -7,5 +7,6 @@
   <description>开发模块</description>
   <modules>
   	<module>openplateform-shiro-modules</module>
+  	<module>openplateform-spring-activemq-modules</module>
   </modules>
 </project>
