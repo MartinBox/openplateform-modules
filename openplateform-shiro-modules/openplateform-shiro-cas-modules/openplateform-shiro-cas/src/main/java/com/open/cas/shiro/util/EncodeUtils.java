@@ -57,14 +57,14 @@ public class EncodeUtils {
 		return Base64.encodeBase64String(input);
 	}
 
-	public static byte[] md5(String input){
+	public static byte[] md5(String input) {
 		return DigestUtils.md5(input);
 	}
-	
-	public static String base64md5(String input){
+
+	public static String base64md5(String input) {
 		return Base64.encodeBase64String(DigestUtils.md5(input));
 	}
-	
+
 	/**
 	 * Base64编码, URL安全(将Base64中的URL非法字符'+'和'/'转为'-'和'_', 见RFC3548).
 	 */
@@ -96,7 +96,7 @@ public class EncodeUtils {
 	public static String encodeBase62(long num) {
 		return alphabetEncode(num, 62);
 	}
-	
+
 	/**
 	 * Base62(0_9A_Za_z)解码数字, String->long.
 	 */
@@ -115,7 +115,7 @@ public class EncodeUtils {
 	}
 
 	private static long alphabetDecode(String str, int base) {
-		if(StringUtils.isEmpty(str)){
+		if (StringUtils.isEmpty(str)) {
 			return 0;
 		}
 		long result = 0;
@@ -125,7 +125,7 @@ public class EncodeUtils {
 
 		return result;
 	}
-	
+
 	/**
 	 * Html 转码.
 	 */
@@ -176,15 +176,15 @@ public class EncodeUtils {
 			throw ExceptionUtils.unchecked(e);
 		}
 	}
-	
+
 	/**
 	 * URL参数解码. 
 	 */
 	public static String urlParamDecode(String param) {
 		try {
-			if(param!=null){
-				return new String(param.getBytes("iso8859-1"),DEFAULT_URL_ENCODING);
-			}else{
+			if (param != null) {
+				return new String(param.getBytes("iso8859-1"), DEFAULT_URL_ENCODING);
+			} else {
 				return null;
 			}
 		} catch (UnsupportedEncodingException e) {

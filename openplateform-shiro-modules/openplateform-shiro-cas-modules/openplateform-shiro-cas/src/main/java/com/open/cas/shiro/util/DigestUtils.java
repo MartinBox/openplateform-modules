@@ -1,4 +1,5 @@
 package com.open.cas.shiro.util;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.security.GeneralSecurityException;
@@ -6,9 +7,6 @@ import java.security.MessageDigest;
 import java.security.SecureRandom;
 
 import org.apache.commons.lang3.Validate;
-
-
-
 
 /**
  * 支持SHA-1/MD5消息摘要的工具类.
@@ -38,7 +36,7 @@ public abstract class DigestUtils {
 	public static byte[] sha1(byte[] input, byte[] salt, int iterations) {
 		return digest(input, SHA1, salt, iterations);
 	}
-	
+
 	/**
 	 * 对输入字符串进行md5散列.
 	 */

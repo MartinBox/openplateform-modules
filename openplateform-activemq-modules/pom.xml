@@ -6,10 +6,9 @@
     <artifactId>openplateform-modules</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>openplateform-spring-activemq-modules</artifactId>
+  <artifactId>openplateform-activemq-modules</artifactId>
   <packaging>pom</packaging>
   <modules>
-    <module>openplateform-spring-activemq-topic-producer</module>
     <module>openplateform-spring-activemq</module>
   </modules>
 </project>
