@@ -25,7 +25,7 @@
 			/> -->
 		<property name="casServerUrlPrefix" value="http://localhost:8080/cas-server-webapp" />
 		<!-- 是当前应用CAS服务URL，即用于接收并处理登录成功后的Ticket的 -->
-		<property name="casService" value="http://127.0.0.1:8056/shiro-cas/cas" />
+		<property name="casService" value="http://127.0.0.1:8059/openplateform-shiro-cas/cas" />
 	</bean>
 
 	<bean id="casFilter" class="org.apache.shiro.cas.CasFilter">
@@ -40,7 +40,7 @@
 	<bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
 		<property name="securityManager" ref="securityManager" />
 		<property name="loginUrl"
-			value="http://localhost:8080/cas-server-webapp/login?service=http://127.0.0.1:8056/shiro-cas/cas" />
+			value="http://localhost:8080/cas-server-webapp/login?service=http://127.0.0.1:8059/openplateform-shiro-cas/cas" />
 		<property name="successUrl" value="/index.jsp" />
 		<property name="filters">
 			<util:map>

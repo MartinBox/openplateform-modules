@@ -11,5 +11,6 @@
   <description>shiro+cas单点登录模块</description>
   <modules>
     <module>shiro-cas</module>
+    <module>openplateform-shiro-cas</module>
   </modules>
 </project>

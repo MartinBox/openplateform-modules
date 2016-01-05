@@ -4,16 +4,17 @@
 	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>com.cas</groupId>
-		<artifactId>cas-parent</artifactId>
+		<groupId>com</groupId>
+		<artifactId>openplateform-shiro-cas-modules</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<groupId>com.cas</groupId>
-	<artifactId>shiro-cas</artifactId>
+	<groupId>com</groupId>
+	<artifactId>openplateform-shiro-cas</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>shiro-cas</name>
+	<name>openplateform-shiro-cas</name>
 	<packaging>war</packaging>
 	<url>http://maven.apache.org</url>
+	
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<spring.version>3.2.2.RELEASE</spring.version>
@@ -161,8 +162,6 @@
 			<version>1.8</version>
 		</dependency>
 		<!-- SECURITY end -->
-
-
 		<dependency>
 			<groupId>org.jasig.cas.client</groupId>
 			<artifactId>cas-client-core</artifactId>
@@ -195,10 +194,6 @@
 					<skip>true</skip>
 				</configuration>
 			</plugin>
-
 		</plugins>
-		
-		
 	</build>
-
 </project>
