@@ -6,9 +6,9 @@ import java.util.Map;
 import org.springframework.data.domain.Page;
 import org.springframework.util.StringUtils;
 
-
 @SuppressWarnings("unchecked")
 public class Result extends HashMap<String, Object> {
+
 	private static final long serialVersionUID = -812425749886169637L;
 
 	public static final String DATA = "data";
@@ -121,9 +121,7 @@ public class Result extends HashMap<String, Object> {
 	public String toJsonString() {
 		StringBuilder sb = new StringBuilder();
 
-		bracketStart(sb).quoteAppend(sb, SUCCESS).colon(sb).append(sb,
-				get(SUCCESS)).comma(sb).quoteAppend(sb, MESSAGE).colon(sb)
-				.quoteAppend(sb, get(MESSAGE)).bracketEnd(sb);
+		bracketStart(sb).quoteAppend(sb, SUCCESS).colon(sb).append(sb, get(SUCCESS)).comma(sb).quoteAppend(sb, MESSAGE).colon(sb).quoteAppend(sb, get(MESSAGE)).bracketEnd(sb);
 		return sb.toString();
 	}
 }

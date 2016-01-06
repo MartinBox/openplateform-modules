@@ -1,4 +1,4 @@
-package org.openplateform.shiro.cas;
+package org.openplateform.jersey.rest;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
