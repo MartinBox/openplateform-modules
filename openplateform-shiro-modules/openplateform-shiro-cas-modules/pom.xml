@@ -12,5 +12,6 @@
   <modules>
     <module>shiro-cas</module>
     <module>openplateform-shiro-cas</module>
+    <module>openplateform-shiro-cas-server</module>
   </modules>
 </project>
