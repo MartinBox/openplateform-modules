@@ -15,9 +15,15 @@ import com.open.shiro.dynamic.permissions.service.ResourceService;
 import com.open.shiro.dynamic.permissions.service.UserService;
 
 /**
- * <p>User: Zhang Kaitao
- * <p>Date: 14-2-14
- * <p>Version: 1.0
+ * 
+ * The class IndexController.
+ *
+ * Description: 
+ *
+ * @author: liuheng
+ * @since: 2016年1月8日	
+ * @version: $Revision$ $Date$ $LastChangedBy$
+ *
  */
 @Controller
 public class IndexController {

@@ -1,150 +1,149 @@
 package com.open.shiro.dynamic.permissions.entity;
 
-import org.springframework.util.CollectionUtils;
-import org.springframework.util.StringUtils;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.util.CollectionUtils;
+import org.springframework.util.StringUtils;
+
 /**
- * <p>User: Zhang Kaitao
- * <p>Date: 14-1-28
- * <p>Version: 1.0
+ * 
+ * The class User.
+ *
+ * Description: 
+ *
+ * @author: liuheng
+ * @since: 2016年1月8日	
+ * @version: $Revision$ $Date$ $LastChangedBy$
+ *
  */
 public class User implements Serializable {
-    private Long id; //编号
-    private Long organizationId; //所属公司
-    private String username; //用户名
-    private String password; //密码
-    private String salt; //加密密码的盐
-    private List<Long> roleIds; //拥有的角色列表
-    private Boolean locked = Boolean.FALSE;
 
-    public User() {
-    }
+	private Long id; //编号
+	private Long organizationId; //所属公司
+	private String username; //用户名
+	private String password; //密码
+	private String salt; //加密密码的盐
+	private List<Long> roleIds; //拥有的角色列表
+	private Boolean locked = Boolean.FALSE;
 
-    public User(String username, String password) {
-        this.username = username;
-        this.password = password;
-    }
+	public User() {
+	}
 
-    public Long getId() {
-        return id;
-    }
+	public User(String username, String password) {
+		this.username = username;
+		this.password = password;
+	}
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	public Long getId() {
+		return id;
+	}
 
-    public Long getOrganizationId() {
-        return organizationId;
-    }
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-    public void setOrganizationId(Long organizationId) {
-        this.organizationId = organizationId;
-    }
+	public Long getOrganizationId() {
+		return organizationId;
+	}
 
-    public String getUsername() {
-        return username;
-    }
+	public void setOrganizationId(Long organizationId) {
+		this.organizationId = organizationId;
+	}
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
+	public String getUsername() {
+		return username;
+	}
 
-    public String getPassword() {
-        return password;
-    }
+	public void setUsername(String username) {
+		this.username = username;
+	}
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
+	public String getPassword() {
+		return password;
+	}
 
-    public String getSalt() {
-        return salt;
-    }
+	public void setPassword(String password) {
+		this.password = password;
+	}
 
-    public void setSalt(String salt) {
-        this.salt = salt;
-    }
+	public String getSalt() {
+		return salt;
+	}
 
-    public String getCredentialsSalt() {
-        return username + salt;
-    }
+	public void setSalt(String salt) {
+		this.salt = salt;
+	}
 
-    public List<Long> getRoleIds() {
-        if(roleIds == null) {
-            roleIds = new ArrayList<Long>();
-        }
-        return roleIds;
-    }
+	public String getCredentialsSalt() {
+		return username + salt;
+	}
 
-    public void setRoleIds(List<Long> roleIds) {
-        this.roleIds = roleIds;
-    }
+	public List<Long> getRoleIds() {
+		if (roleIds == null) {
+			roleIds = new ArrayList<Long>();
+		}
+		return roleIds;
+	}
 
+	public void setRoleIds(List<Long> roleIds) {
+		this.roleIds = roleIds;
+	}
 
-    public String getRoleIdsStr() {
-        if(CollectionUtils.isEmpty(roleIds)) {
-            return "";
-        }
-        StringBuilder s = new StringBuilder();
-        for(Long roleId : roleIds) {
-            s.append(roleId);
-            s.append(",");
-        }
-        return s.toString();
-    }
+	public String getRoleIdsStr() {
+		if (CollectionUtils.isEmpty(roleIds)) {
+			return "";
+		}
+		StringBuilder s = new StringBuilder();
+		for (Long roleId : roleIds) {
+			s.append(roleId);
+			s.append(",");
+		}
+		return s.toString();
+	}
 
-    public void setRoleIdsStr(String roleIdsStr) {
-        if(StringUtils.isEmpty(roleIdsStr)) {
-            return;
-        }
-        String[] roleIdStrs = roleIdsStr.split(",");
-        for(String roleIdStr : roleIdStrs) {
-            if(StringUtils.isEmpty(roleIdStr)) {
-                continue;
-            }
-            getRoleIds().add(Long.valueOf(roleIdStr));
-        }
-    }
-    
-    public Boolean getLocked() {
-        return locked;
-    }
+	public void setRoleIdsStr(String roleIdsStr) {
+		if (StringUtils.isEmpty(roleIdsStr)) {
+			return;
+		}
+		String[] roleIdStrs = roleIdsStr.split(",");
+		for (String roleIdStr : roleIdStrs) {
+			if (StringUtils.isEmpty(roleIdStr)) {
+				continue;
+			}
+			getRoleIds().add(Long.valueOf(roleIdStr));
+		}
+	}
 
-    public void setLocked(Boolean locked) {
-        this.locked = locked;
-    }
+	public Boolean getLocked() {
+		return locked;
+	}
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+	public void setLocked(Boolean locked) {
+		this.locked = locked;
+	}
 
-        User user = (User) o;
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
 
-        if (id != null ? !id.equals(user.id) : user.id != null) return false;
+		User user = (User) o;
 
-        return true;
-    }
+		if (id != null ? !id.equals(user.id) : user.id != null) return false;
 
-    @Override
-    public int hashCode() {
-        return id != null ? id.hashCode() : 0;
-    }
+		return true;
+	}
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", organizationId=" + organizationId +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", salt='" + salt + '\'' +
-                ", roleIds=" + roleIds +
-                ", locked=" + locked +
-                '}';
-    }
+	@Override
+	public int hashCode() {
+		return id != null ? id.hashCode() : 0;
+	}
+
+	@Override
+	public String toString() {
+		return "User{" + "id=" + id + ", organizationId=" + organizationId + ", username='" + username + '\'' + ", password='" + password + '\'' + ", salt='" + salt + '\'' + ", roleIds=" + roleIds
+				+ ", locked=" + locked + '}';
+	}
 }

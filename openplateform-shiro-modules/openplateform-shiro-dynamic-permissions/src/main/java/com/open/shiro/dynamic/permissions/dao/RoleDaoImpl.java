@@ -14,10 +14,16 @@ import org.springframework.stereotype.Repository;
 
 import com.open.shiro.dynamic.permissions.entity.Role;
 
-/**
- * <p>User: Zhang Kaitao
- * <p>Date: 14-1-28
- * <p>Version: 1.0
+/***
+ * 
+ * The class RoleDaoImpl.
+ *
+ * Description: 
+ *
+ * @author: liuheng
+ * @since: 2016年1月8日	
+ * @version: $Revision$ $Date$ $LastChangedBy$
+ *
  */
 @Repository
 public class RoleDaoImpl implements RoleDao {

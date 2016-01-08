@@ -27,8 +27,14 @@ import com.open.shiro.dynamic.permissions.Constants;
 /**
  * <p>绑定当前登录的用户</p>
  * <p>不同于@ModelAttribute</p>
+ * The class CurrentUser.
  *
- * @author Zhang Kaitao
+ * Description: 
+ *
+ * @author: liuheng
+ * @since: 2016年1月8日	
+ * @version: $Revision$ $Date$ $LastChangedBy$
+ *
  */
 @Target({ ElementType.PARAMETER })
 @Retention(RetentionPolicy.RUNTIME)

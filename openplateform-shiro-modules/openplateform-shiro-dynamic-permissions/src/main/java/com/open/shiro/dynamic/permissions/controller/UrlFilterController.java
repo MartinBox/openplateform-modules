@@ -12,9 +12,15 @@ import com.open.shiro.dynamic.permissions.entity.UrlFilter;
 import com.open.shiro.dynamic.permissions.service.UrlFilterService;
 
 /**
- * <p>User: Zhang Kaitao
- * <p>Date: 14-2-14
- * <p>Version: 1.0
+ * 
+ * The class UrlFilterController.
+ *
+ * Description: 
+ *
+ * @author: liuheng
+ * @since: 2016年1月8日	
+ * @version: $Revision$ $Date$ $LastChangedBy$
+ *
  */
 @Controller
 @RequestMapping("/urlFilter")

@@ -5,9 +5,15 @@ import java.util.List;
 import com.open.shiro.dynamic.permissions.entity.Organization;
 
 /**
- * <p>User: Zhang Kaitao
- * <p>Date: 14-1-28
- * <p>Version: 1.0
+ * 
+ * The class OrganizationService.
+ *
+ * Description: 
+ *
+ * @author: liuheng
+ * @since: 2016年1月8日	
+ * @version: $Revision$ $Date$ $LastChangedBy$
+ *
  */
 public interface OrganizationService {
 

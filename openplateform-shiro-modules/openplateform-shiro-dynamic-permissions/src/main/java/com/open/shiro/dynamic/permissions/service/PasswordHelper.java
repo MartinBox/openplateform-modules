@@ -10,9 +10,15 @@ import org.springframework.stereotype.Service;
 import com.open.shiro.dynamic.permissions.entity.User;
 
 /**
- * <p>User: Zhang Kaitao
- * <p>Date: 14-1-28
- * <p>Version: 1.0
+ * 
+ * The class PasswordHelper.
+ *
+ * Description: 
+ *
+ * @author: liuheng
+ * @since: 2016年1月8日	
+ * @version: $Revision$ $Date$ $LastChangedBy$
+ *
  */
 @Service
 public class PasswordHelper {

@@ -1,10 +1,17 @@
 package com.open.shiro.dynamic.permissions;
 
 /**
- * <p>User: Zhang Kaitao
- * <p>Date: 14-2-15
- * <p>Version: 1.0
+ * 
+ * The class Constants.
+ *
+ * Description: 
+ *
+ * @author: liuheng
+ * @since: 2016年1月8日	
+ * @version: $Revision$ $Date$ $LastChangedBy$
+ *
  */
 public class Constants {
-    public static final String CURRENT_USER = "user";
+
+	public static final String CURRENT_USER = "user";
 }

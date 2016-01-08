@@ -3,82 +3,83 @@ package com.open.shiro.dynamic.permissions.entity;
 import java.io.Serializable;
 
 /**
- * <p>User: Zhang Kaitao
- * <p>Date: 14-2-25
- * <p>Version: 1.0
+ * 
+ * The class UrlFilter.
+ *
+ * Description: 
+ *
+ * @author: liuheng
+ * @since: 2016年1月8日	
+ * @version: $Revision$ $Date$ $LastChangedBy$
+ *
  */
 public class UrlFilter implements Serializable {
-    private Long id;
-    private String name; //url名称/描述
-    private String url; //地址
-    private String roles; //所需要的角色，可省略
-    private String permissions; //所需要的权限，可省略
 
-    public Long getId() {
-        return id;
-    }
+	private Long id;
+	private String name; //url名称/描述
+	private String url; //地址
+	private String roles; //所需要的角色，可省略
+	private String permissions; //所需要的权限，可省略
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	public Long getId() {
+		return id;
+	}
 
-    public String getName() {
-        return name;
-    }
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-    public void setName(String name) {
-        this.name = name;
-    }
+	public String getName() {
+		return name;
+	}
 
-    public String getUrl() {
-        return url;
-    }
+	public void setName(String name) {
+		this.name = name;
+	}
 
-    public void setUrl(String url) {
-        this.url = url;
-    }
+	public String getUrl() {
+		return url;
+	}
 
-    public String getRoles() {
-        return roles;
-    }
+	public void setUrl(String url) {
+		this.url = url;
+	}
 
-    public void setRoles(String roles) {
-        this.roles = roles;
-    }
+	public String getRoles() {
+		return roles;
+	}
 
-    public String getPermissions() {
-        return permissions;
-    }
+	public void setRoles(String roles) {
+		this.roles = roles;
+	}
 
-    public void setPermissions(String permissions) {
-        this.permissions = permissions;
-    }
+	public String getPermissions() {
+		return permissions;
+	}
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+	public void setPermissions(String permissions) {
+		this.permissions = permissions;
+	}
 
-        UrlFilter urlFilter = (UrlFilter) o;
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
 
-        if (id != null ? !id.equals(urlFilter.id) : urlFilter.id != null) return false;
+		UrlFilter urlFilter = (UrlFilter) o;
 
-        return true;
-    }
+		if (id != null ? !id.equals(urlFilter.id) : urlFilter.id != null) return false;
 
-    @Override
-    public int hashCode() {
-        return id != null ? id.hashCode() : 0;
-    }
+		return true;
+	}
 
-    @Override
-    public String toString() {
-        return "UrlFilter{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", url='" + url + '\'' +
-                ", roles='" + roles + '\'' +
-                ", permissions='" + permissions + '\'' +
-                '}';
-    }
+	@Override
+	public int hashCode() {
+		return id != null ? id.hashCode() : 0;
+	}
+
+	@Override
+	public String toString() {
+		return "UrlFilter{" + "id=" + id + ", name='" + name + '\'' + ", url='" + url + '\'' + ", roles='" + roles + '\'' + ", permissions='" + permissions + '\'' + '}';
+	}
 }

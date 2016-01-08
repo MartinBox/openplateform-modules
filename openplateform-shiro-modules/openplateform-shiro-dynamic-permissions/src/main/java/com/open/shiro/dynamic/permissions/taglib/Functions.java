@@ -13,9 +13,15 @@ import com.open.shiro.dynamic.permissions.service.RoleService;
 import com.open.shiro.dynamic.permissions.util.SpringUtils;
 
 /**
- * <p>User: Zhang Kaitao
- * <p>Date: 14-2-15
- * <p>Version: 1.0
+ * 
+ * The class Functions.
+ *
+ * Description: 
+ *
+ * @author: liuheng
+ * @since: 2016年1月8日	
+ * @version: $Revision$ $Date$ $LastChangedBy$
+ *
  */
 public class Functions {
 

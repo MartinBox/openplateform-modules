@@ -1,51 +1,58 @@
 package com.open.shiro.dynamic.permissions;
 
-import org.apache.shiro.web.filter.mgt.FilterChainManager;
-import org.apache.shiro.web.filter.mgt.PathMatchingFilterChainResolver;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.FilterChain;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
-import java.util.ArrayList;
-import java.util.List;
+
+import org.apache.shiro.web.filter.mgt.FilterChainManager;
+import org.apache.shiro.web.filter.mgt.PathMatchingFilterChainResolver;
 
 /**
- * <p>User: Zhang Kaitao
- * <p>Date: 14-2-25
- * <p>Version: 1.0
+ * 
+ * The class CustomPathMatchingFilterChainResolver.
+ *
+ * Description: 
+ *
+ * @author: liuheng
+ * @since: 2016年1月8日	
+ * @version: $Revision$ $Date$ $LastChangedBy$
+ *
  */
 public class CustomPathMatchingFilterChainResolver extends PathMatchingFilterChainResolver {
 
-    private CustomDefaultFilterChainManager customDefaultFilterChainManager;
+	private CustomDefaultFilterChainManager customDefaultFilterChainManager;
 
-    public void setCustomDefaultFilterChainManager(CustomDefaultFilterChainManager customDefaultFilterChainManager) {
-        this.customDefaultFilterChainManager = customDefaultFilterChainManager;
-        setFilterChainManager(customDefaultFilterChainManager);
-    }
+	public void setCustomDefaultFilterChainManager(CustomDefaultFilterChainManager customDefaultFilterChainManager) {
+		this.customDefaultFilterChainManager = customDefaultFilterChainManager;
+		setFilterChainManager(customDefaultFilterChainManager);
+	}
 
-    public FilterChain getChain(ServletRequest request, ServletResponse response, FilterChain originalChain) {
-        FilterChainManager filterChainManager = getFilterChainManager();
-        if (!filterChainManager.hasChains()) {
-            return null;
-        }
+	public FilterChain getChain(ServletRequest request, ServletResponse response, FilterChain originalChain) {
+		FilterChainManager filterChainManager = getFilterChainManager();
+		if (!filterChainManager.hasChains()) {
+			return null;
+		}
 
-        String requestURI = getPathWithinApplication(request);
+		String requestURI = getPathWithinApplication(request);
 
-        List<String> chainNames = new ArrayList<String>();
-        //the 'chain names' in this implementation are actually path patterns defined by the user.  We just use them
-        //as the chain name for the FilterChainManager's requirements
-        for (String pathPattern : filterChainManager.getChainNames()) {
+		List<String> chainNames = new ArrayList<String>();
+		//the 'chain names' in this implementation are actually path patterns defined by the user.  We just use them
+		//as the chain name for the FilterChainManager's requirements
+		for (String pathPattern : filterChainManager.getChainNames()) {
 
-            // If the path does match, then pass on to the subclass implementation for specific checks:
-            if (pathMatches(pathPattern, requestURI)) {
-                chainNames.add(pathPattern);
-            }
-        }
+			// If the path does match, then pass on to the subclass implementation for specific checks:
+			if (pathMatches(pathPattern, requestURI)) {
+				chainNames.add(pathPattern);
+			}
+		}
 
-        if(chainNames.size() == 0) {
-            return null;
-        }
+		if (chainNames.size() == 0) {
+			return null;
+		}
 
-        return customDefaultFilterChainManager.proxy(originalChain, chainNames);
-    }
+		return customDefaultFilterChainManager.proxy(originalChain, chainNames);
+	}
 }

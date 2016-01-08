@@ -14,9 +14,15 @@ import com.open.shiro.dynamic.permissions.dao.ResourceDao;
 import com.open.shiro.dynamic.permissions.entity.Resource;
 
 /**
- * <p>User: Zhang Kaitao
- * <p>Date: 14-2-14
- * <p>Version: 1.0
+ * 
+ * The class ResourceServiceImpl.
+ *
+ * Description: 
+ *
+ * @author: liuheng
+ * @since: 2016年1月8日	
+ * @version: $Revision$ $Date$ $LastChangedBy$
+ *
  */
 @Service
 public class ResourceServiceImpl implements ResourceService {

@@ -6,7 +6,7 @@
     <description>functions</description>
     <tlib-version>3.0</tlib-version>
     <short-name>fn</short-name>
-    <uri>http://github.com/zhangkaitao/tags/zhang-functions</uri>
+    <uri>http://github.com/MartinBox/tags/functions</uri>
 
     <function>
         <description>obj in collection</description>

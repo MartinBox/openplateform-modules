@@ -9,9 +9,15 @@ import com.open.shiro.dynamic.permissions.dao.OrganizationDao;
 import com.open.shiro.dynamic.permissions.entity.Organization;
 
 /**
- * <p>User: Zhang Kaitao
- * <p>Date: 14-2-14
- * <p>Version: 1.0
+ * 
+ * The class OrganizationServiceImpl.
+ *
+ * Description: 
+ *
+ * @author: liuheng
+ * @since: 2016年1月8日	
+ * @version: $Revision$ $Date$ $LastChangedBy$
+ *
  */
 @Service
 public class OrganizationServiceImpl implements OrganizationService {

@@ -11,9 +11,15 @@ import com.open.shiro.dynamic.permissions.dao.UrlFilterDao;
 import com.open.shiro.dynamic.permissions.entity.UrlFilter;
 
 /**
- * <p>User: Zhang Kaitao
- * <p>Date: 14-2-25
- * <p>Version: 1.0
+ * 
+ * The class UrlFilterServiceImpl.
+ *
+ * Description: 
+ *
+ * @author: liuheng
+ * @since: 2016年1月8日	
+ * @version: $Revision$ $Date$ $LastChangedBy$
+ *
  */
 @Service
 public class UrlFilterServiceImpl implements UrlFilterService {

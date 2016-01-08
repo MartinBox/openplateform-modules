@@ -17,9 +17,15 @@ import com.open.shiro.dynamic.permissions.entity.User;
 import com.open.shiro.dynamic.permissions.service.UserService;
 
 /**
- * <p>User: Zhang Kaitao
- * <p>Date: 14-1-28
- * <p>Version: 1.0
+ * 
+ * The class UserRealm.
+ *
+ * Description: 
+ *
+ * @author: liuheng
+ * @since: 2016年1月8日	
+ * @version: $Revision$ $Date$ $LastChangedBy$
+ *
  */
 public class UserRealm extends AuthorizingRealm {
 
