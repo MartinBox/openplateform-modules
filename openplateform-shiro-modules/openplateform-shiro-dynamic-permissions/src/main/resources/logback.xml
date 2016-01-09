@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<!-- 日志文件路径配置 -->
+	<property name="logs_path" value="E:/opt/appl/shiro-per/auth" />
+	<!-- 系统名称配置（日志文件名以系统名称显示） -->
+	<property name="sys_name" value="plateform-middleware" />
+
+	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+		<Encoding>UTF-8</Encoding>
+		<encoder>
+			<pattern> %d{yyyy-MM-dd HH:mm:ss.SSS} [%X{transactionId}] [%t] %-5level
+				[%F:%L] - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="openplateform-shiro-dynamic-permissions"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<Encoding>UTF-8</Encoding>
+		<file>${logs_path}/${sys_name}.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${logs_path}/${sys_name}.%d{yyyy-MM-dd-HH}.log
+			</fileNamePattern>
+		</rollingPolicy>
+		<encoder>
+			<pattern> %d{HH:mm:ss.SSS} [%X{transactionId}] [%thread] %-5level
+				%logger{36} - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<logger name="com.open" level="debug" />
+	<logger name="org.springframework.web" level="DEBUG" />
+	<logger name="jdbc.sqltiming" level="INFO" />
+	
+	<root level="debug">
+		<appender-ref ref="console" />
+		<appender-ref ref="openplateform-shiro-dynamic-permissions" />
+	</root>
+
+</configuration>

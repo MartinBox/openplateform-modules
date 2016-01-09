@@ -12,7 +12,6 @@
 <c:if test="${not empty msg}">
     <div class="message">${msg}</div>
 </c:if>
-
 <shiro:hasPermission name="user:create">
     <a href="${pageContext.request.contextPath}/user/create">用户新增</a><br/>
 </shiro:hasPermission>

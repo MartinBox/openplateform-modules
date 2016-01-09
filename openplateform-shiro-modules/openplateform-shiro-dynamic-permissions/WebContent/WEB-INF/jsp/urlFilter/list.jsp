@@ -33,7 +33,7 @@
                 <td>${urlFilter.url}</td>
                 <td>${urlFilter.roles}</td>
                 <td>${urlFilter.permissions}</td>
-                <td>
+                <td><a href="${pageContext.request.contextPath}/urlFilter/${urlFilter.id}/update">修改</a>
                     <shiro:hasPermission name="urlFilter:update">
                         <a href="${pageContext.request.contextPath}/urlFilter/${urlFilter.id}/update">修改</a>
                     </shiro:hasPermission>
