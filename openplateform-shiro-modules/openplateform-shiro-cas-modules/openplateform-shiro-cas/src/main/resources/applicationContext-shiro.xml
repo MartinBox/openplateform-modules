@@ -21,26 +21,22 @@
 	<!-- 項目自定义的Realm, 所有accountService依赖的dao都需要用depends-on声明 -->
 	<bean id="shiroDbRealm" class="com.open.cas.shiro.SimpleCasRealm">
 		<!-- 是CAS Server服务器端地址 -->
-		<!-- <property name="casServerUrlPrefix" value="http://localhost:8080/cas" 
-			/> -->
-		<property name="casServerUrlPrefix" value="http://localhost:8080/cas-server-webapp" />
+		<property name="casServerUrlPrefix" value="${shiro.casServer.url}" />
 		<!-- 是当前应用CAS服务URL，即用于接收并处理登录成功后的Ticket的 -->
-		<property name="casService" value="http://127.0.0.1:8059/openplateform-shiro-cas/cas" />
+		<property name="casService" value="${shiro.client.cas}" />
 	</bean>
 
 	<bean id="casFilter" class="org.apache.shiro.cas.CasFilter">
 		<property name="failureUrl" value="/casFailure.jsp" />
-		<!-- <property name="failureUrl" value="http://127.0.0.1:8080/cas-server-webapp/login?service=http://localhost:8054/shiro-cas/user/index.shtml" 
-			/> -->
 	</bean>
 	<bean id="logoutFilter" class="org.apache.shiro.web.filter.authc.LogoutFilter">
-		<property name="redirectUrl" value="/logout.jsp" />
+		<property name="redirectUrl" value="${shiro.casServer.url}/logout?service=${shiro.client.cas}/logout" />
 	</bean>
 	<!-- Shiro Filter -->
 	<bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
 		<property name="securityManager" ref="securityManager" />
 		<property name="loginUrl"
-			value="http://localhost:8080/cas-server-webapp/login?service=http://127.0.0.1:8059/openplateform-shiro-cas/cas" />
+			value="${shiro.casServer.url}/login?service=${shiro.client.cas}" />
 		<property name="successUrl" value="/index.jsp" />
 		<property name="filters">
 			<util:map>
