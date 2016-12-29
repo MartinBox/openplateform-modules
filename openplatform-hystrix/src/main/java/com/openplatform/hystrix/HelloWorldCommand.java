@@ -4,6 +4,8 @@ import com.netflix.hystrix.HystrixCommand;
 import com.netflix.hystrix.HystrixCommandGroupKey;
 import com.netflix.hystrix.HystrixCommandProperties;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 
@@ -23,16 +25,21 @@ public class HelloWorldCommand extends HystrixCommand<String> {
 
     @Override
     protected String run() {
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        System.out.println(name + " start = " + formatter.format(new Date()));
         try {
             TimeUnit.SECONDS.sleep(3);
         } catch (Exception e) {
+            System.out.println(name + " exception");
             e.printStackTrace();
+        }finally {
+            System.out.println(name + " end = " + formatter.format(new Date()));
         }
         // 依赖逻辑封装在run()方法中
         return "Hello " + name + " thread:" + Thread.currentThread().getName();
     }
 
-   @Override
+    @Override
     protected String getFallback() {
         return "fall back";
     }
