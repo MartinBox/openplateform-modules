@@ -59,6 +59,6 @@ public class HelloWorldCommand extends HystrixCommand<String> {
         //get操作不能超过command定义的超时时间,默认:1秒
         result = future.get(100, TimeUnit.MILLISECONDS);
         System.out.println("async result=" + result);
-        System.out.println("mainThread=" + Thread.currentThread().getName());
+        System.out.println("main thread=" + Thread.currentThread().getName());
     }
 }
