@@ -12,6 +12,7 @@
 		<module>openplateform-rest-modules</module>
 		<module>openplateform-spring-modules</module>
 		<module>openplatform-hystrix</module>
+		<module>openlateform-ftp</module>
 	</modules>
 
 	<properties>
