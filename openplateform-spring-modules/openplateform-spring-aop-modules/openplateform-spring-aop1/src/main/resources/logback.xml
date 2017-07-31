@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<!-- 日志文件路径配置 -->
+	<substitutionProperty name="log.base" value="E:/opt/appl/spring/aop1/log" />
+	<substitutionProperty name="log.access" value="${log.base}/access" />
+
+
+	<!-- 系统名称配置（日志文件名以系统名称显示） -->
+	<property name="sys_name" value="aop1" />
+
+	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+		<Encoding>UTF-8</Encoding>
+		<encoder>
+			<pattern> %d{yyyy-MM-dd HH:mm:ss.SSS} [%X{transactionId}] [%t]
+				%-5level
+				[%F:%L] - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="openplateform-spring-aop1"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<Encoding>UTF-8</Encoding>
+		<file>${log.base}/${sys_name}.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${log.base}/${sys_name}.%d{yyyy-MM-dd-HH}.log
+			</fileNamePattern>
+		</rollingPolicy>
+		<encoder>
+			<pattern> %d{HH:mm:ss.SSS} [%X{transactionId}] [%thread] %-5level
+				%logger{36} - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="logAccess"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>INFO</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY</onMismatch>
+		</filter>
+		<File>${log.access}/access.log</File>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<FileNamePattern>
+				${log.access}/access.log.%d{yyyy-MM-dd-HH}.%i
+			</FileNamePattern>
+			<TimeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<MaxFileSize>5MB</MaxFileSize>
+			</TimeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+		<encoder>
+			<Pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%X{transactionId}] - %msg%n</Pattern>
+			<charset>UTF-8</charset>
+		</encoder>
+	</appender>
+
+	<logger name="com.open" level="debug" />
+	<logger name="org.springframework.web" level="DEBUG" />
+	<logger name="jdbc.sqltiming" level="INFO" />
+
+	<root level="debug">
+		<appender-ref ref="console" />
+		<appender-ref ref="openplateform-spring-aop1" />
+	</root>
+
+	<logger name="log.access" additivity="false">
+		<appender-ref ref="logAccess" />
+	</logger>
+
+</configuration>
