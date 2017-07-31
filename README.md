@@ -15,3 +15,8 @@ shiro学习demo
 
 ###openplateform-shiro-cas-modules
 shiro、cas实现的单点登录，包含客户端openplateform-shiro-cas、服务端openplateform-shiro-cas-server
+
+###openplateform-ftp
+
+
+###openplateform-hystrix
