@@ -13,7 +13,17 @@
 		<module>openplateform-spring-modules</module>
 		<module>openplatform-hystrix</module>
 		<module>openlateform-ftp</module>
-	</modules>
+        <module>openplateform-spi</module>
+        <module>openlateform-limit</module>
+        <module>openplateform-jdk1_8</module>
+        <module>openplateform-resilience4j</module>
+        <module>openplateform-reactor</module>
+        <module>study-rxjava</module>
+        <module>study-resilience4j</module>
+        <module>study-sentinel</module>
+        <module>study-algorithm</module>
+        <module>study-spring-boot</module>
+    </modules>
 
 	<properties>
 		<jdk.version>1.7</jdk.version>

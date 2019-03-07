@@ -1,0 +1,12 @@
+server:
+  port: 80
+
+spring:
+  cloud:
+    sentinel:
+      transport:
+        dashboard: 172.30.60.227:8080
+  application:
+    name: study-sentinel
+
+

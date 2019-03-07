@@ -12,7 +12,7 @@
 		<constructor-arg ref="shiroDbRealm" name="singleRealm" />
 		<!-- <property name="realm" ref="shiroDbRealm" /> -->
 		<property name="cacheManager" ref="shiroEhcacheManager" />
-		<!-- <property name="sessionMode" value="native"/>just for test, remove 
+		<!-- <property name="sessionMode" value="native"/>just for factories, remove
 			it when deploy! -->
 		<!-- <property name="sessionManager" ref="sessionManager" /> -->
 		<property name="subjectFactory" ref="casSubjectFactory" />

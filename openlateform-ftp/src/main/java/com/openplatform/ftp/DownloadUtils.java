@@ -167,8 +167,8 @@ public class DownloadUtils {
 
 
     public static void main(String[] args) {
-        //uploadFile("172.30.0.115", 21, "test", "Test@f7p", "webk/", "test2.txt", new ByteArrayInputStream("你好".getBytes()));
-        readRemoteFile("172.30.0.115", 21, "test", "Test@f7p", "/webk/", "webk-20170216.txt", "F://");
+        //uploadFile("172.30.0.115", 21, "factories", "Test@f7p", "webk/", "test2.txt", new ByteArrayInputStream("你好".getBytes()));
+        readRemoteFile("172.30.0.115", 21, "factories", "Test@f7p", "/webk/", "webk-20170216.txt", "F://");
     }
 
 }

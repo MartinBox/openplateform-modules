@@ -1,0 +1,4 @@
+com.openplateform.spi.jdk.svc.impl.TestServiceImpl
+com.openplateform.spi.jdk.svc.impl.TestServiceImpl2
+# 自定义name
+test=com.openplateform.spi.jdk.svc.impl.TestServiceImpl2

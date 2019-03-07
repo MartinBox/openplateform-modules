@@ -1309,7 +1309,7 @@
       });
 
       it("does nothing when node is moved to current location", function() {
-        // TODO How to test? Nothing is happening...
+        // TODO How to factories? Nothing is happening...
         this.table.treetable("move", "n1", "n0");
       });
 

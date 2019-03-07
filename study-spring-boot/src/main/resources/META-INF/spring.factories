@@ -1,0 +1,15 @@
+
+org.springframework.context.ApplicationContextInitializer=\
+
+org.springframework.boot.SpringApplicationRunListener=\
+com.study.factories.CustSpringApplicationRunListener
+
+org.springframework.context.ApplicationListener=\
+com.study.factories.CustApplicationListener
+
+org.springframework.boot.env.EnvironmentPostProcessor=\
+com.study.factories.CustEnvironmentPostProcessor
+
+org.springframework.boot.diagnostics.FailureAnalyzer=\
+com.study.factories.CustFailureAnalyzer
+

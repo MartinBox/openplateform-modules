@@ -257,7 +257,7 @@ public class CollectionsUtils {
 	/**
 	 * <p>Checks if an array of Objects is empty or <code>null</code>.</p>
 	 *
-	 * @param array  the array to test
+	 * @param array  the array to factories
 	 * @return <code>true</code> if the array is empty or <code>null</code>
 	 * @since 2.1
 	 */
@@ -271,7 +271,7 @@ public class CollectionsUtils {
 	/**
 	 * <p>Checks if an array of primitive longs is empty or <code>null</code>.</p>
 	 *
-	 * @param array  the array to test
+	 * @param array  the array to factories
 	 * @return <code>true</code> if the array is empty or <code>null</code>
 	 * @since 2.1
 	 */
@@ -285,7 +285,7 @@ public class CollectionsUtils {
 	/**
 	 * <p>Checks if an array of primitive ints is empty or <code>null</code>.</p>
 	 *
-	 * @param array  the array to test
+	 * @param array  the array to factories
 	 * @return <code>true</code> if the array is empty or <code>null</code>
 	 * @since 2.1
 	 */
@@ -299,7 +299,7 @@ public class CollectionsUtils {
 	/**
 	 * <p>Checks if an array of primitive shorts is empty or <code>null</code>.</p>
 	 *
-	 * @param array  the array to test
+	 * @param array  the array to factories
 	 * @return <code>true</code> if the array is empty or <code>null</code>
 	 * @since 2.1
 	 */
@@ -313,7 +313,7 @@ public class CollectionsUtils {
 	/**
 	 * <p>Checks if an array of primitive chars is empty or <code>null</code>.</p>
 	 *
-	 * @param array  the array to test
+	 * @param array  the array to factories
 	 * @return <code>true</code> if the array is empty or <code>null</code>
 	 * @since 2.1
 	 */
@@ -327,7 +327,7 @@ public class CollectionsUtils {
 	/**
 	 * <p>Checks if an array of primitive bytes is empty or <code>null</code>.</p>
 	 *
-	 * @param array  the array to test
+	 * @param array  the array to factories
 	 * @return <code>true</code> if the array is empty or <code>null</code>
 	 * @since 2.1
 	 */
@@ -341,7 +341,7 @@ public class CollectionsUtils {
 	/**
 	 * <p>Checks if an array of primitive doubles is empty or <code>null</code>.</p>
 	 *
-	 * @param array  the array to test
+	 * @param array  the array to factories
 	 * @return <code>true</code> if the array is empty or <code>null</code>
 	 * @since 2.1
 	 */
@@ -355,7 +355,7 @@ public class CollectionsUtils {
 	/**
 	 * <p>Checks if an array of primitive floats is empty or <code>null</code>.</p>
 	 *
-	 * @param array  the array to test
+	 * @param array  the array to factories
 	 * @return <code>true</code> if the array is empty or <code>null</code>
 	 * @since 2.1
 	 */
@@ -369,7 +369,7 @@ public class CollectionsUtils {
 	/**
 	 * <p>Checks if an array of primitive booleans is empty or <code>null</code>.</p>
 	 *
-	 * @param array  the array to test
+	 * @param array  the array to factories
 	 * @return <code>true</code> if the array is empty or <code>null</code>
 	 * @since 2.1
 	 */
