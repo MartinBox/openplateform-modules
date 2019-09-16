@@ -1,0 +1,89 @@
+2019-03-19 17:12:20 [InitExecutor] Found init func: com.alibaba.csp.sentinel.transport.init.CommandCenterInitFunc
+2019-03-19 17:12:20 [InitExecutor] Found init func: com.alibaba.csp.sentinel.transport.init.HeartbeatSenderInitFunc
+2019-03-19 17:12:20 [InitExecutor] Found init func: com.alibaba.csp.sentinel.init.ParamFlowStatisticSlotCallbackInit
+2019-03-19 17:12:20 [InitExecutor] Found init func: com.alibaba.csp.sentinel.cluster.server.init.DefaultClusterServerInitFunc
+2019-03-19 17:12:20 [InitExecutor] Found init func: com.alibaba.csp.sentinel.cluster.client.init.DefaultClusterClientInitFunc
+2019-03-19 17:12:20 [InitExecutor] Initialized: com.alibaba.csp.sentinel.cluster.client.init.DefaultClusterClientInitFunc with order 0
+2019-03-19 17:12:20 App name resolved: study-sentinel
+2019-03-19 17:12:20 [SentinelConfig] JVM parameter overrides csp.sentinel.charset: UTF-8 -> UTF-8
+2019-03-19 17:12:20 [SentinelConfig] JVM parameter overrides csp.sentinel.flow.cold.factor: 3 -> 3
+2019-03-19 17:12:20 [CommandCenterInit] Starting command center: com.alibaba.csp.sentinel.transport.command.SimpleHttpCommandCenter
+2019-03-19 17:12:20 [InitExecutor] Initialized: com.alibaba.csp.sentinel.transport.init.CommandCenterInitFunc with order 2147483647
+2019-03-19 17:12:20 Parse heartbeat interval failed, use that in code, null
+2019-03-19 17:12:20 [SimpleHttpHeartbeatSender] Default console address list retrieved: [/172.30.60.226:8080]
+2019-03-19 17:12:20 [HeartbeatSenderInit] HeartbeatSender started: com.alibaba.csp.sentinel.transport.heartbeat.SimpleHttpHeartbeatSender
+2019-03-19 17:12:20 [InitExecutor] Initialized: com.alibaba.csp.sentinel.transport.init.HeartbeatSenderInitFunc with order 2147483647
+2019-03-19 17:12:20 [InitExecutor] Initialized: com.alibaba.csp.sentinel.init.ParamFlowStatisticSlotCallbackInit with order 2147483647
+2019-03-19 17:12:20 [TokenServiceProvider] Global token service resolved: com.alibaba.csp.sentinel.cluster.flow.DefaultTokenService
+2019-03-19 17:12:20 [DefaultClusterServerInitFunc] Default entity codec and processors registered
+2019-03-19 17:12:20 [InitExecutor] Initialized: com.alibaba.csp.sentinel.cluster.server.init.DefaultClusterServerInitFunc with order 2147483647
+2019-03-19 17:12:20 Add child <sentinel_default_context> to node <machine-root>
+2019-03-19 17:12:20 Add child </test> to node <machine-root>
+2019-03-19 17:12:20 [SlotChainProvider] Global slot chain builder resolved: com.alibaba.csp.sentinel.slots.HotParamSlotChainBuilder
+2019-03-19 17:12:20 Add child </test> to node </test>
+2019-03-19 17:12:20 [ParamFlowRuleManager] No parameter flow rules, clearing all parameter metrics
+2019-03-19 17:12:20 [ParamFlowRuleManager] Hot spot parameter flow rules received: {}
+2019-03-19 17:12:20 [SystemRuleManager] Current system check status: false, highestSystemLoad: 1.7976931348623157E308, maxRt: 9223372036854775807, maxThread: 9223372036854775807, maxQps: 1.7976931348623157E308
+2019-03-19 17:12:20 [AuthorityRuleManager] Load authority rules: {}
+2019-03-19 17:12:20 [FlowRuleManager] Flow rules loaded: {}
+2019-03-19 17:12:20 [MetricWriter] Creating new MetricWriter, singleFileSize=52428800, totalFileCount=6
+2019-03-19 17:12:20 [DegradeRuleManager] Degrade rules loaded: {}
+2019-03-19 17:12:21 [MetricWriter] New metric file created: ./logs/csp/\study-sentinel-metrics.log.2019-03-19
+2019-03-19 17:12:21 [MetricWriter] New metric index file created: ./logs/csp/\study-sentinel-metrics.log.2019-03-19.idx
+2019-03-19 17:44:34 Failed to send heart beat to 172.30.60.226/172.30.60.226:8080 : 
+java.net.SocketException: Software caused connection abort: socket write error
+	at java.net.SocketOutputStream.socketWrite0(Native Method)
+	at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:111)
+	at java.net.SocketOutputStream.write(SocketOutputStream.java:155)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implFlushBuffer(StreamEncoder.java:291)
+	at sun.nio.cs.StreamEncoder.implFlush(StreamEncoder.java:295)
+	at sun.nio.cs.StreamEncoder.flush(StreamEncoder.java:141)
+	at java.io.OutputStreamWriter.flush(OutputStreamWriter.java:229)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:254)
+	at com.alibaba.csp.sentinel.transport.heartbeat.client.SimpleHttpClient.request(SimpleHttpClient.java:117)
+	at com.alibaba.csp.sentinel.transport.heartbeat.client.SimpleHttpClient.post(SimpleHttpClient.java:81)
+	at com.alibaba.csp.sentinel.transport.heartbeat.SimpleHttpHeartbeatSender.sendHeartbeat(SimpleHttpHeartbeatSender.java:76)
+	at com.alibaba.csp.sentinel.transport.init.HeartbeatSenderInitFunc$1.run(HeartbeatSenderInitFunc.java:64)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset$$$capture(FutureTask.java:308)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2019-03-19 17:58:23 Failed to send heart beat to 172.30.60.226/172.30.60.226:8080 : 
+java.net.SocketTimeoutException
+	at java.net.SocksSocketImpl.remainingMillis(SocksSocketImpl.java:111)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at com.alibaba.csp.sentinel.transport.heartbeat.client.SimpleHttpClient.request(SimpleHttpClient.java:96)
+	at com.alibaba.csp.sentinel.transport.heartbeat.client.SimpleHttpClient.post(SimpleHttpClient.java:81)
+	at com.alibaba.csp.sentinel.transport.heartbeat.SimpleHttpHeartbeatSender.sendHeartbeat(SimpleHttpHeartbeatSender.java:76)
+	at com.alibaba.csp.sentinel.transport.init.HeartbeatSenderInitFunc$1.run(HeartbeatSenderInitFunc.java:64)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset$$$capture(FutureTask.java:308)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2019-03-19 17:59:19 Failed to send heart beat to 172.30.60.226/172.30.60.226:8080 : 
+java.net.SocketTimeoutException
+	at java.net.SocksSocketImpl.remainingMillis(SocksSocketImpl.java:111)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at com.alibaba.csp.sentinel.transport.heartbeat.client.SimpleHttpClient.request(SimpleHttpClient.java:96)
+	at com.alibaba.csp.sentinel.transport.heartbeat.client.SimpleHttpClient.post(SimpleHttpClient.java:81)
+	at com.alibaba.csp.sentinel.transport.heartbeat.SimpleHttpHeartbeatSender.sendHeartbeat(SimpleHttpHeartbeatSender.java:76)
+	at com.alibaba.csp.sentinel.transport.init.HeartbeatSenderInitFunc$1.run(HeartbeatSenderInitFunc.java:64)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset$$$capture(FutureTask.java:308)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)

@@ -15,7 +15,6 @@
  */
 package com.study;
 
-import cn.yueshutong.springprojecttree.config.annotation.EnableProjectTree;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -25,12 +24,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author Chill
  */
 @SpringBootApplication
-@EnableProjectTree("execution(* com.study..*(..))")
 public class Application {
 
     public static void main(String[] args) {
         SpringApplication application = new SpringApplication(Application.class);
         application.addListeners(new ApplicationStartup());
+        application.addListeners(new SentinelDataSourceHandler());
         application.run(args);
     }
 

@@ -25,4 +25,10 @@ public class TestCtrl {
         System.out.println("fallback");
         return "fallback";
     }
+
+    @RequestMapping("table")
+    public String table() {
+        System.out.println("fallback");
+        return "fallback";
+    }
 }

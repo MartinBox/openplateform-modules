@@ -5,7 +5,24 @@ spring:
   cloud:
     sentinel:
       transport:
-        dashboard: 172.30.60.227:8080
+        dashboard: 172.30.60.226:8080
+      log:
+        dir: ./logs/csp/
+#      datasource:
+#        ds1:
+#          zk:
+#            serverAddr: 172.30.60.227:2181,172.30.60.227:2182,172.30.60.227:2183
+#            path: /alibaba/sentinel
+#            groupId: TestDemo
+#            dataId: testZkFlowConfig
+#         ds2:
+#           nacos:
+#             serverAddr: 172.30.60.227:9555
+#             groupId: TestDemo
+#             dataId: testZkFlowConfig
+      nacos:
+        config:
+          endpoint: 172.30.60.227:9555
   application:
     name: study-sentinel
 

@@ -23,6 +23,10 @@
         <module>study-sentinel</module>
         <module>study-algorithm</module>
         <module>study-spring-boot</module>
+        <module>study-mockito</module>
+        <module>sduty-okhttp3</module>
+        <module>study-mybatis</module>
+        <module>study-8583</module>
     </modules>
 
 	<properties>
