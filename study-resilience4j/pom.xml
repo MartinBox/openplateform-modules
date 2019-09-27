@@ -30,9 +30,9 @@
         <dependency>
             <groupId>io.github.resilience4j</groupId>
             <artifactId>resilience4j-circuitbreaker</artifactId>
-            <version>0.13.1</version>
+            <version>1.0.0</version>
         </dependency>
-        <dependency>
+        <!--<dependency>
             <groupId>io.github.resilience4j</groupId>
             <artifactId>resilience4j-ratelimiter</artifactId>
             <version>0.13.1</version>
@@ -56,13 +56,13 @@
             <groupId>io.github.resilience4j</groupId>
             <artifactId>resilience4j-timelimiter</artifactId>
             <version>0.13.1</version>
-        </dependency>
+        </dependency>-->
         <dependency>
             <groupId>io.github.resilience4j</groupId>
             <artifactId>resilience4j-metrics</artifactId>
-            <version>0.13.1</version>
+            <version>1.0.0</version>
         </dependency>
-        <dependency>
+       <!-- <dependency>
             <groupId>io.github.resilience4j</groupId>
             <artifactId>resilience4j-consumer</artifactId>
             <version>0.13.1</version>
@@ -86,7 +86,7 @@
             <groupId>io.github.resilience4j</groupId>
             <artifactId>resilience4j-vertx</artifactId>
             <version>0.13.1</version>
-        </dependency>
+        </dependency>-->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>

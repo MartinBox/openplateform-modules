@@ -27,6 +27,7 @@
         <module>sduty-okhttp3</module>
         <module>study-mybatis</module>
         <module>study-8583</module>
+        <module>study-netty</module>
     </modules>
 
 	<properties>

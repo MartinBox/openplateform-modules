@@ -3,8 +3,6 @@ package com;
 import io.github.resilience4j.circuitbreaker.CircuitBreaker;
 import io.github.resilience4j.circuitbreaker.CircuitBreakerConfig;
 import io.github.resilience4j.circuitbreaker.CircuitBreakerRegistry;
-import io.github.resilience4j.circuitbreaker.event.CircuitBreakerEvent;
-import io.github.resilience4j.consumer.CircularEventConsumer;
 import io.vavr.API;
 import io.vavr.CheckedFunction0;
 import io.vavr.Predicates;
@@ -14,7 +12,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.time.Duration;
-import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.stream.IntStream;
 
@@ -56,7 +53,8 @@ public class CircuitBreakerTest {
                 .build();
         CircuitBreaker circuitBreaker = breakerRegistry.circuitBreaker("get_userinfo", circuitBreakerConfig);
 
-        Try<String> result = Try.of(CircuitBreaker.decorateCheckedSupplier(circuitBreaker, () -> "123"));
+        Try<String> result = Try.of(CircuitBreaker.decorateCheckedSupplier(circuitBreaker, () -> "123"))
+                .recover(throwable -> "Hello from Recovery");
         logger.info("result:{}", result.get());
 
     }
@@ -194,7 +192,7 @@ public class CircuitBreakerTest {
         logger.info("result:{}", result.get());
     }
 
-    @Test
+    /*@Test
     public void listener_event_test() {
         int ringBufferSize = 3;
         CircuitBreakerConfig circuitBreakerConfig = CircuitBreakerConfig.custom()
@@ -220,5 +218,5 @@ public class CircuitBreakerTest {
             logger.info("circuitBreakerEvent Type Name :{}",circuitBreakerEvent.getEventType().name());
         });
 
-    }
+    }*/
 }
