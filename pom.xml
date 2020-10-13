@@ -40,7 +40,7 @@
 		<javax.servlet.api>3.0.1</javax.servlet.api>
 		<javax.jsp.api>2.2</javax.jsp.api>
 		<javax.jstl>1.2</javax.jstl>
-		<junit.version>4.11</junit.version>
+		<junit.version>4.13.1</junit.version>
 	</properties>
 
 	<dependencyManagement>
